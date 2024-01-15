@@ -24,6 +24,11 @@ public class StringOps {
     public static void main(String[] args) {
 
         String string = args[0];
+        char chr = 'l';
+        int[] arr = allIndexOf(string, chr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
 
     }
 
@@ -35,7 +40,8 @@ public class StringOps {
 
             if (current == 97 || current == 105 || current == 101 || current == 111 || current == 117) {
                 str = str + (char) (string.charAt(i) - 32);
-            } else if (string.charAt(i) >= 65 && string.charAt(i) <= 90) {
+            } else if (string.charAt(i) >= 65 && string.charAt(i) <= 90 && current != 'A' && current != 'I'
+                    && current != 'E' && current != 'O') {
                 str = str + (char) (string.charAt(i) + 32);
             } else {
                 str = str + current;
@@ -104,7 +110,7 @@ public class StringOps {
         }
         int[] arr = new int[n];
         int index = 0;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < string.length(); i++) {
             if (chr == string.charAt(i)) {
                 arr[index] = i;
                 index++;
