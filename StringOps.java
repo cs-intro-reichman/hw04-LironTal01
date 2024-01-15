@@ -24,14 +24,6 @@ public class StringOps {
     public static void main(String[] args) {
 
         String string = args[0];
-        char ch = 'l';
-        int[] array = allIndexOf(string, ch);
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] != 0) {
-                System.out.println(array[i]);
-            }
-
-        }
 
     }
 
@@ -105,7 +97,7 @@ public class StringOps {
         int n = 0;
 
         for (int i = 0; i < string.length(); i++) {
-            if (string.charAt(i) != 32) {
+            if (string.charAt(i) != 32 && string.charAt(i) == chr) {
                 n++;
 
             }
