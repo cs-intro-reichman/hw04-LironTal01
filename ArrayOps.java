@@ -1,32 +1,22 @@
 public class ArrayOps {
     public static void main(String[] args) {
 
-        int[] arr = { 1, -2, 3 };
-        System.out.println(isSorted(arr));
+        int[] arr = { 2, 0, 1, 4, 5, 6 };
+        System.out.println(findMissingInt(arr));
 
     }
 
     public static int findMissingInt(int[] array) {
+        int length = array.length;
+        int sum = 0;
+        int sumArr = ((length + 1) * length) / 2;
 
-        int[] arr = new int[array.length];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = i + 1;
+        for (int i = 0; i < length; i++) {
+            sum = sum + array[i];
         }
 
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                if (array[i] == arr[j]) {
-                    arr[j] = -1;
-                }
-            }
-        }
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != -1) {
-                return arr[i];
+        return sumArr - sum;
 
-            }
-        }
-        return -1;
     }
 
     public static int secondMaxValue(int[] array) {
@@ -41,7 +31,7 @@ public class ArrayOps {
 
             }
 
-            else if (array[i] > Max2 && array[i] != Max1) {
+            else if (array[i] > Max2) {
                 Max2 = array[i];
 
             }
